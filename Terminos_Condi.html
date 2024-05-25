@@ -27,6 +27,7 @@
       /* Utilizando la fuente Minecraftia */
     }
 
+    /* Estilos para el navbar */
     .navbar {
   width: 100%;
   height: auto;
@@ -63,83 +64,103 @@
 .navbar-nav .custom-item .nav-link:active {
   color: #ff0000;
 }
-    /* Estilos para la tarjeta de detalle */
-    .tarjeta-detalle {
-    width: 80%;
-    text-align: center;
-    margin: 50px auto;
-    display: flex;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 1.5);
-    border-radius: 10px;
-    overflow: hidden;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(253, 185, 230, 0.2); /* Color rosa pastel con opacidad */
-  }
+   
 
-  .contenido {
-    padding: 25px;
-    background-color: #ffdae2;
-  }
+    .owl-prev,
+    .owl-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #1bb125;
+    }
 
-  .contenido h2 {
-    text-align: center;
-    font-size: 35px;
-    background: linear-gradient(to right, #000000, #be1414);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 10px;
-  }
+    .owl-prev {
+      left: -30px;
+    }
 
-  .contenido p {
-    font-size: 20px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #000000, #be1414);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+    .owl-next {
+      right: -30px;
+    }
 
-  .precio {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333; /* Color de texto oscuro para contraste */
-    margin-bottom: 20px;
-  }
+    .tarjeta-producto {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      text-align: center;
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-top: 20px;
+      box-shadow: 0px 12px 20px rgba(46, 175, 210, 1.5);
+    }
 
-  .boton {
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    font-size: 20px;
-    padding: 10px 20px;
-    color: #fff; /* Texto blanco para contraste */
-    background: linear-gradient(to right, #ff7f7f, #ffafbd);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-    margin-bottom: 10px;
-  }
 
-  .boton:hover {
-    background-color: #fc0026; /* Rojo más oscuro al pasar el ratón */
-  }
+    .contenido {
+      padding: 5%;
+     width: 100%; 
+     justify-content: center;
+     
+    }
+
+
+    .contenido h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .contenido p {
+      font-size: 20px;
+      margin-bottom: 20px;
+      margin-right: 2%;
+      
+    }
+
+    .boton {
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 30px;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      background-image: linear-gradient(to right, #9885f4, #b4eafa); /* Degradado de colores */
+    }
+
+    .boton:hover {
+      background-color: #344f6d;
+    }
+
+    .contenedor-tarjetas {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+    }
 
  
 
-  @media (max-width: 768px) {
-    .tarjeta-detalle {
-      flex-direction: column;
-    }
+    @media only screen and (max-width: 768px) {
+      .contenedor-tarjetas {
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .tarjeta-detalle img {
-      width: 100%;
+      .tarjeta-producto {
+        width: 90%;
+        margin-bottom: 20px;
+        
+      }
     }
-
-    .contenido {
-      width: 100%;
-    }
-  }
   </style>
 </head>
 
@@ -147,7 +168,7 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="Princi.html"><img src="/imagenes/Logo.png" alt="Mi Logo"></a>
+    <a class="navbar-brand" href="Princi.html"><img src="imagenes/Logo.png" alt="Mi Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -165,6 +186,7 @@
       </ul>
     </div>
   </nav>
+
 
   <!-- Contenido -->
   <div class="contenedor-tarjetas">
@@ -200,36 +222,36 @@
   </div>
 
 
-<!-- Scripts JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<!-- Carrusel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-  $(document).ready(function () {
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      autoplay: true,
-      autoplayTimeout: 3000,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1000: {
-          items: 3
+  
+  <!-- Scripts JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Carrusel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 2
+          },
+          1000: {
+            items: 3
+          }
         }
-      }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 
 </html>
-
